@@ -8,7 +8,7 @@ from sklearn.linear_model import LogisticRegression
 import uvicorn
 import os 
 app = FastAPI(title="Lung Cancer Risk Predictor API")
-port = int(os.environ.get("PORT", 8000)) 
+
 
 # Global model variable
 model = None
@@ -344,4 +344,5 @@ async def health_check():
 
 if __name__ == "__main__":
    import uvicorn 
+    port = int(os.environ.get("PORT", 8000)) 
     uvicorn.run(app, host="0.0.0.0", port=port reload =True)
